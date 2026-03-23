@@ -3,16 +3,16 @@
 img { opacity: 0; }
 
 :root {
-  --color-bg-light: #f4f4f2;
-  --color-bg-section: #e1e1e1;
-  --color-bg-white: #ffffff;
+  --color-bg-light: #e6e6e6;
+  --color-bg-section: #e6e6e6;
+  --color-bg-white: #e6e6e6;
   --color-footer: #2f3732;
   --color-text-dark: #1a1a1a;
   --color-text-muted: #999;
   --color-text-footer: #e1e1d8;
   --color-blue: #0000ff;
-  --font-jp: 'Noto Sans JP', sans-serif;
-  --font-en: 'Inter', sans-serif;
+  --font-jp: 'Noto Serif JP', 'Noto Sans JP', serif;
+  --font-en: 'Cormorant Garamond', 'Inter', serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -44,10 +44,11 @@ header {
   display: flex;
   align-items: center;
   margin-right: auto;
+  padding: 10px 0 0 20px;
 }
 
 .header-logo img {
-  height: 52px;
+  height: 80px;
   width: auto;
   opacity: 1;
   filter: brightness(0) invert(1);
@@ -209,7 +210,7 @@ header.header--scrolled {
   width: 100%;
   height: 900px;
   overflow: hidden;
-  background: #D9D9D9;
+  background: #e6e6e6;
   margin-top: 0;
 }
 
@@ -243,7 +244,7 @@ header.header--scrolled {
 .features-section {
   position: relative;
   z-index: 2;
-  background: #ffffff;
+  background: #e6e6e6;
 }
 
 .hero-inner {
@@ -389,7 +390,7 @@ header.header--scrolled {
 .about-top-img-left-inner {
   width: 566px;
   height: 354px;
-  background: #D9D9D9 url('images/figma-about-top-left.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-top-left.jpg') center/cover no-repeat;
 }
 
 .about-top-img-right {
@@ -403,7 +404,7 @@ header.header--scrolled {
 .about-top-img-right-inner {
   width: 449px;
   height: 466px;
-  background: #D9D9D9 url('images/figma-about-top-right.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-top-right.jpg') center/cover no-repeat;
 }
 
 /* Staggered text area */
@@ -478,7 +479,7 @@ header.header--scrolled {
 .about-bottom-img-left {
   flex: 0 0 683px;
   height: 330px;
-  background: #D9D9D9 url('images/figma-about-bottom-left.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-bottom-left.jpg') center/cover no-repeat;
 }
 
 .about-bottom-img-right-col {
@@ -489,51 +490,59 @@ header.header--scrolled {
 .about-bottom-img-right {
   width: 332px;
   height: 520px;
-  background: #D9D9D9 url('images/figma-about-bottom-right.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-bottom-right.jpg') center/cover no-repeat;
 }
 
 /* ===== YAKUSHIMA HARMONIA LAB WHAT IS SECTION ===== */
 .what-section {
   position: relative;
-  background-color: var(--color-bg-light);
-  padding: 140px 60px 0;
+  background: #1b2c3a;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 縦書きデコレーション (最左端) */
+.what-section::before {
+  content: '屋久島洗浄水とは';
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-jp);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .what-inner {
   display: flex;
-  gap: 112px;
-  align-items: flex-start;
-  margin-bottom: 79px;
+  gap: 100px;
+  align-items: center;
+  padding: 120px 100px 120px 80px;
+  margin-bottom: 0;
 }
 
-.what-left {
-  flex: 0 0 380px;
-  padding-top: 277px;
-}
-
+/* 写真を左へ */
 .what-right {
+  order: 1;
+  flex: 0 0 500px;
+}
+
+/* テキストを右へ */
+.what-left {
+  order: 2;
   flex: 1;
-}
-
-.what-img-placeholder {
-  width: 739px;
-  height: 475px;
-  background: #D9D9D9 url('images/figma-tsunagu-03.jpg') center/cover no-repeat;
-  position: relative;
-}
-
-.what-img-overlap {
-  position: absolute;
-  left: 402px;
-  top: 373px;
-  width: 411px;
-  height: 391px;
-  background: #c7c7c7 url('images/figma-business-03.jpg') center/cover no-repeat;
+  padding-top: 0;
 }
 
 .what-accordion {
-  max-width: 615px;
-  padding-bottom: 95px;
+  padding: 0 100px 100px 80px;
+  max-width: 100%;
 }
 
 .what-label {
@@ -547,36 +556,46 @@ header.header--scrolled {
 }
 
 .what-title {
-  font-family: var(--font-jp);
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: -0.78px;
-  color: var(--color-text-dark);
-  margin-bottom: 40px;
+  font-family: var(--font-en);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 48px;
 }
 
 .what-desc {
   font-family: var(--font-jp);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 2.0;
   letter-spacing: 0.3px;
-  color: var(--color-text-dark);
+  color: rgba(255, 255, 255, 0.78);
 }
 
+.what-img-placeholder {
+  width: 500px;
+  height: 345px;
+  background: #e6e6e6 url('images/figma-tsunagu-03.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.what-img-overlap { display: none; }
+
 .what-right {
-  flex: 1;
+  order: 1;
+  flex: 0 0 500px;
   display: flex;
   flex-direction: column;
 }
 
 .accordion-item {
-  border-bottom: 1px solid rgba(0,0,0,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .accordion-item:first-child {
-  border-top: 1px solid rgba(0,0,0,0.12);
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
 
 .accordion-header {
@@ -590,32 +609,32 @@ header.header--scrolled {
 .accordion-num {
   font-family: var(--font-en);
   font-size: 12px;
-  font-weight: 500;
-  color: var(--color-text-muted);
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
   width: 24px;
   flex-shrink: 0;
 }
 
 .accordion-text {
   font-family: var(--font-jp);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  color: var(--color-text-dark);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: rgba(255,255,255,0.85);
   flex: 1;
 }
 
 .accordion-icon {
   width: 22px;
   height: 22px;
-  border: 1px solid rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   font-size: 14px;
-  color: var(--color-text-dark);
+  color: rgba(255,255,255,0.6);
   line-height: 1;
 }
 
@@ -670,7 +689,7 @@ header.header--scrolled {
   flex: 0 0 400px;
   height: 280px;
   overflow: hidden;
-  background: #D9D9D9;
+  background: #e6e6e6;
 }
 
 .feature-img img {
@@ -708,7 +727,6 @@ header.header--scrolled {
 .products-section {
   position: relative;
   background-color: var(--color-bg-light);
-  background-image: url('images/bg-texture.png');
   background-size: 80px 20px;
   padding: 0 0 0;
 }
@@ -729,10 +747,10 @@ header.header--scrolled {
   align-items: center;
 }
 
-.product-band--dark { background: #bfbfbf; }
+.product-band--dark { background: #e6e6e6; }
 .product-band--light { background: #e6e6e6; }
-.products-list .product-band:nth-child(1) { background: #ffffff url('images/figma-product-tsunagu.png') center/cover no-repeat; }
-.products-list .product-band:nth-child(3) { background: #ffffff url('images/figma-product-paper.png') center/cover no-repeat; }
+.products-list .product-band:nth-child(1) { background: #e6e6e6 url('images/figma-product-tsunagu.png') center/cover no-repeat; }
+.products-list .product-band:nth-child(3) { background: #e6e6e6 url('images/figma-product-paper.png') center/cover no-repeat; }
 
 .product-band-text {
   display: flex;
@@ -946,7 +964,7 @@ header.header--scrolled {
 .kankyo-hero-photo {
   flex: 0 0 633px;
   height: 380px;
-  background: #D9D9D9 url('images/figma-environment-01.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-environment-01.jpg') center/cover no-repeat;
 }
 
 .kankyo-hero-content {
@@ -1036,7 +1054,7 @@ header.header--scrolled {
 .kankyo-card {
   flex: 1;
   height: 502px;
-  background: #D9D9D9;
+  background: #e6e6e6;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -1047,11 +1065,11 @@ header.header--scrolled {
 .kankyo-card--left {
   border-right: 3px solid #fff;
   padding-right: 25px;
-  background: #D9D9D9 url('images/figma-environment-02.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-environment-02.jpg') center/cover no-repeat;
 }
 
 .kankyo-card--right {
-  background: #D9D9D9 url('images/figma-environment-03.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-environment-03.jpg') center/cover no-repeat;
 }
 
 .kankyo-card-content {
@@ -1108,7 +1126,7 @@ header.header--scrolled {
 
 /* ===== CONTACT SECTION ===== */
 .contact-section {
-  background: #d9d9d9;
+  background: #1a221f;
   padding: 90px 88.5px;
 }
 
@@ -1119,7 +1137,7 @@ header.header--scrolled {
 
 .contact-card {
   flex: 1;
-  background: #fff;
+  background: #e6e6e6;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   height: 244px;
@@ -1214,7 +1232,7 @@ header.header--scrolled {
 /* ===== FOOTER ===== */
 .site-footer {
   position: relative;
-  background: #0b100e;
+  background: #1a221f;
   border-top: 1px solid rgba(180, 150, 58, 0.30);
   color: #fff;
 }
@@ -1474,7 +1492,7 @@ header.header--scrolled {
 .page-hero-img {
   width: 100%;
   height: 100%;
-  background: #b0b0a8;
+  background: #e6e6e6;
 }
 
 .page-hero-overlay {
@@ -1598,7 +1616,7 @@ header.header--scrolled {
 .tsunagu-intro-img {
   flex: 0 0 520px;
   height: 380px;
-  background: #D9D9D9;
+  background: #e6e6e6 url('images/figma-tsunagu-intro.jpg') center/cover no-repeat;
 }
 
 /* ===== SUBPAGE: REASON ===== */
@@ -1675,7 +1693,16 @@ header.header--scrolled {
 .tsunagu-strength-img {
   flex: 0 0 480px;
   height: 320px;
-  background: #D9D9D9;
+  background: #e6e6e6 center/cover no-repeat;
+}
+.tsunagu-strength-item:nth-child(1) .tsunagu-strength-img {
+  background-image: url('images/figma-tsunagu-strength01.jpg');
+}
+.tsunagu-strength-item:nth-child(2) .tsunagu-strength-img {
+  background-image: url('images/figma-tsunagu-strength02.jpg');
+}
+.tsunagu-strength-item:nth-child(3) .tsunagu-strength-img {
+  background-image: url('images/figma-tsunagu-strength03.jpg');
 }
 
 .tsunagu-strength-content {
@@ -1772,13 +1799,32 @@ header.header--scrolled {
 
 .tsunagu-cta-btn-purchase:hover { opacity: 0.75; }
 
+.intro-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 0 40px;
+  height: 56px;
+  background: var(--color-text-dark);
+  border-radius: 48px;
+  font-family: var(--font-jp);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+.intro-buy-btn:hover { opacity: 0.75; }
+
 .tsunagu-cta-btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 300px;
   height: 64px;
-  background: #f9fae4;
+  background: #e6e6e6;
   border: 1px solid #f9fae4;
   border-radius: 48px;
   font-family: var(--font-jp);
@@ -1790,7 +1836,7 @@ header.header--scrolled {
   transition: background 0.2s;
 }
 
-.tsunagu-cta-btn-primary:hover { background: #eef0c8; }
+.tsunagu-cta-btn-primary:hover { background: #e6e6e6; }
 
 .tsunagu-cta-btn-primary.btn-inquiry::after { display: none; }
 
@@ -1862,7 +1908,7 @@ header.header--scrolled {
 .actguard-problem-img {
   flex: 0 0 520px;
   height: 380px;
-  background: #d9d9d9;
+  background: #e6e6e6 url('images/figma-actguard-problem.jpg') center/cover no-repeat;
 }
 
 /* Intro section (text left, image right) */
@@ -1883,7 +1929,7 @@ header.header--scrolled {
 .actguard-intro-img {
   flex: 0 0 480px;
   height: 360px;
-  background: #c8c8c0;
+  background: #e6e6e6;
 }
 
 /* Note text */
@@ -1982,7 +2028,7 @@ header.header--scrolled {
 
 .actguard-voice-card {
   flex: 1;
-  background: #fff;
+  background: #e6e6e6;
   padding: 43px 36px 36px;
   border-top: 3px solid var(--color-text-dark);
 }
@@ -2036,7 +2082,7 @@ header.header--scrolled {
 .actguard-usecase-img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: #D9D9D9;
+  background: #e6e6e6;
 }
 
 .actguard-usecase-label {
@@ -2111,7 +2157,7 @@ header.header--scrolled {
 .company-map {
   width: 100%;
   height: 400px;
-  background: #c8c8c0;
+  background: #e6e6e6;
   border-radius: 8px;
   margin-bottom: 32px;
 }
@@ -2137,6 +2183,38 @@ header.header--scrolled {
 .contact-form-section {
   background: var(--color-bg-light);
   padding: 120px 0;
+}
+
+.contact-heading-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.contact-sales-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 52px;
+  margin-top: -50px;
+  margin-left: 200px;
+  background: transparent;
+  border: 1.5px solid var(--color-text-dark);
+  border-radius: 48px;
+  font-family: var(--font-jp);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-sales-btn:hover {
+  background: var(--color-text-dark);
+  color: #fff;
 }
 
 .contact-form-lead {
@@ -2204,7 +2282,7 @@ header.header--scrolled {
   font-size: 15px;
   font-weight: 400;
   color: var(--color-text-dark);
-  background: #fff;
+  background: #e6e6e6;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 6px;
   padding: 14px 18px;
@@ -2358,7 +2436,7 @@ header.header--scrolled {
 .about-pg-hero-img {
   width: 100%;
   height: 100%;
-  background: #c0c0b8 url('images/figma-about-hero.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-hero.jpg') center/cover no-repeat;
   min-height: 760px;
 }
 
@@ -2387,7 +2465,7 @@ header.header--scrolled {
   left: 144px;
   width: 561px;
   height: 321px;
-  background: #c8c8c0 url('images/figma-about-split-top.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-split-top.jpg') center/cover no-repeat;
 }
 
 .about-pg-split-img-bottom {
@@ -2396,7 +2474,7 @@ header.header--scrolled {
   left: 144px;
   width: 557px;
   height: 344px;
-  background: #b8b8b0 url('images/figma-about-split-bottom.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-split-bottom.jpg') center/cover no-repeat;
 }
 
 .about-pg-split-text {
@@ -2480,7 +2558,7 @@ header.header--scrolled {
   top: 118px;
   width: 459px;
   height: 560px;
-  background: #c0c0b8 url('images/figma-about-research.jpg') center/cover no-repeat;
+  background: #e6e6e6 url('images/figma-about-research.jpg') center/cover no-repeat;
 }
 
 /* --- Section 4: centered + 5-photo grid --- */
@@ -2540,7 +2618,7 @@ header.header--scrolled {
 
 .about-pg-field-photo {
   height: 240px;
-  background: #c8c8c0;
+  background: #e6e6e6;
 }
 .about-pg-field-photo:nth-child(1) { background-image: url('images/figma-about-field-01.jpg'); background-size: cover; background-position: center; }
 .about-pg-field-photo:nth-child(2) { background-image: url('images/figma-about-field-02.jpg'); background-size: cover; background-position: center; }
@@ -2699,7 +2777,13 @@ header.header--scrolled {
 .shop-item-img {
   flex: 0 0 480px;
   height: 360px;
-  background: #c8c8c0;
+  background: #e6e6e6 center/cover no-repeat;
+}
+.shop-item:nth-child(1) .shop-item-img {
+  background-image: url('images/figma-shop-item01.jpg');
+}
+.shop-item:nth-child(5) .shop-item-img {
+  background-image: url('images/figma-shop-item03.jpg');
 }
 
 .shop-item-body {
@@ -2806,7 +2890,7 @@ header.header--scrolled {
 .mobility-intro-img {
   flex: 0 0 480px;
   height: 360px;
-  background: #c8c8c0;
+  background: #e6e6e6 url('images/figma-mobility-intro.jpg') center/cover no-repeat;
 }
 
 /* Reason section override */
@@ -3047,7 +3131,7 @@ header.header--scrolled {
 .mobility-course-img {
   width: 100%;
   height: 280px;
-  background: #c8c8c0;
+  background: #e6e6e6 url('images/figma-mobility-course.jpg') center/cover no-repeat;
 }
 
 /* CTA override */
@@ -3065,4 +3149,79 @@ header.header--scrolled {
   letter-spacing: 0.5px;
   text-align: center;
   width: 300px;
+}
+
+/* ============================================================
+   INDEX PAGE — LUXURY TYPOGRAPHY
+   英字: Cormorant Garamond（高級セリフ体）
+   日本語: Noto Serif JP（明朝体）
+   ============================================================ */
+
+.page-index {
+  --font-serif-jp: 'Noto Serif JP', 'Noto Sans JP', serif;
+  --font-serif-en: 'Cormorant Garamond', 'Inter', serif;
+}
+
+/* ── 日本語テキスト全般 → 明朝体 ── */
+.page-index .hero-catch p,
+.page-index .vision-section-title,
+.page-index .vision-text,
+.page-index .about-title,
+.page-index .about-body-title,
+.page-index .about-body-text,
+.page-index .what-title,
+.page-index .what-desc,
+.page-index .accordion-text,
+.page-index .feature-title,
+.page-index .feature-body,
+.page-index .product-band-title,
+.page-index .product-band-body,
+.page-index .kankyo-hero-title,
+.page-index .kankyo-hero-body,
+.page-index .kankyo-card-title,
+.page-index .kankyo-card-body,
+.page-index .news-title,
+.page-index .news-body,
+.page-index .contact-card-title,
+.page-index .contact-card-note,
+.page-index .section-title-jp {
+  font-family: var(--font-serif-jp);
+}
+
+/* ── ヘロキャッチ: 明朝体 + 細めのウェイト ── */
+.page-index .hero-catch p {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* ── 英字ラベル → Cormorant Garamond ── */
+.page-index .about-label,
+.page-index .section-label,
+.page-index nav.main-nav a,
+.page-index .lang-switch,
+.page-index .news-release-text,
+.page-index .news-date,
+.page-index .accordion-num,
+.page-index .contact-label,
+.page-index .btn-more,
+.page-index .btn-contact-action,
+.page-index .btn-inquiry,
+.page-index .btn-all-news-jp,
+.page-index .btn-all-news-en {
+  font-family: var(--font-serif-en);
+}
+
+/* ── 英字ラベルはトラッキング広めに ── */
+.page-index .section-label,
+.page-index .about-label,
+.page-index .news-release-text,
+.page-index .contact-label {
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+/* ── ナビ: Cormorant で上品に ── */
+.page-index nav.main-nav a {
+  letter-spacing: 1.5px;
+  font-size: 13px;
 }

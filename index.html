@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YAKUSHIMA HARMONIA LAB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js"></script>
 </head>
-<body>
+<body class="page-index">
 
   <!-- HEADER -->
   <header>
     <div class="header-logo">
-      <img src="images/logo-yakushima.svg" alt="YAKUSHIMA HARMONIA LAB">
+      <img src="images/yakushima_logo_w.svg" alt="YAKUSHIMA HARMONIA LAB">
     </div>
     <nav class="main-nav">
       <a href="about.html">屋久島研究所について</a>
@@ -70,7 +70,7 @@
       <img src="images/hero-yakushima.jpg" alt="YAKUSHIMA HARMONIA LAB - 自然との暮らし">
       <div class="hero-catch">
         <p>自然と共鳴する技術で</p>
-        <p>世界を変える。</p>
+        <p>世界を目指す。</p>
       </div>
     </div>
   </section>
@@ -78,7 +78,7 @@
   <!-- VISION / ABOUT SECTION -->
   <section id="about" class="vision-section">
     <div class="vision-body">
-      <div class="vision-section-title">屋久島共鳴研究所<br>YAKUAHIMA HARMONIA LAB</div>
+      <h1 class="vision-section-title">屋久島共鳴研究所<br>YAKUAHIMA HARMONIA LAB</h1>
       <div class="vision-text">
         <p>屋久島自然共鳴研究所は、屋久島の自然に内在する、<br>「水・波動・循環・調和」に着目し、自然と共鳴する<br>環境技術の開発を行う研究拠点です。</p>
         <p>この島の豊かな水環境をフィールドに、洗浄技術、<br>カビ防止機能水、環境素材、アップサイクル技術へ<br>と応用を展開しています。</p>
@@ -102,8 +102,8 @@
       <!-- Staggered text: heading left, body copy right offset down -->
       <div class="about-text-area">
         <div class="about-heading-block">
-          <div class="about-label">事業内容</div>
-          <div class="about-title">環境と洗浄力を両立する、<br>世界に通用する洗浄水「つなぐ」</div>
+          <h5 class="about-label">事業内容</h5>
+          <h2 class="about-title">環境と洗浄力を両立する、<br>世界に通用する洗浄水「つなぐ」</h2>
         </div>
         <div class="about-body-block">
           <p class="about-body-title">「つなぐ」はたんなる洗剤ではありません。<br>地域の水を、地域の未来につなぐ<br>環境インフラの一部です。</p>
@@ -124,8 +124,8 @@
   <section class="what-section">
     <div class="what-inner">
       <div class="what-left">
-        <div class="what-title">屋久島洗浄水とは</div>
-        <div class="what-desc">屋久島の軟水を特徴な電解技術により洗浄力のあるアルカリ側の水を、洗浄水を生み出しました。</div>
+        <h3 class="what-title">屋久島洗浄水とは</h3>
+        <p class="what-desc">屋久島の軟水を特徴な電解技術により洗浄力のあるアルカリ側の水を、洗浄水を生み出しました。</p>
       </div>
       <div class="what-right">
         <div class="what-img-placeholder">
@@ -137,97 +137,62 @@
       <div class="accordion-item">
         <div class="accordion-header">
           <div class="accordion-num">01</div>
-          <div class="accordion-text">超軟水（ミネラルが少ない）</div>
+          <p class="accordion-text">超軟水（ミネラルが少ない）</p>
           <div class="accordion-icon">＋</div>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header">
           <div class="accordion-num">02</div>
-          <div class="accordion-text">雨量世界有数で水循環が速く、汚染が少ない</div>
+          <p class="accordion-text">雨量世界有数で水循環が速く、汚染が少ない</p>
           <div class="accordion-icon">＋</div>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header">
           <div class="accordion-num">03</div>
-          <div class="accordion-text">花崗岩層で自然ろ過</div>
+          <p class="accordion-text">花崗岩層で自然ろ過</p>
           <div class="accordion-icon">＋</div>
         </div>
       </div>
       <div class="accordion-item">
         <div class="accordion-header">
           <div class="accordion-num">04</div>
-          <div class="accordion-text">塩素・硬度の影響が少ない</div>
+          <p class="accordion-text">塩素・硬度の影響が少ない</p>
           <div class="accordion-icon">＋</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES SECTION -->
-  <section class="features-section">
-    <div class="section-header">
-      <div class="section-title-jp">屋久島洗浄水の特徴</div>
-    </div>
-    <div class="features-list">
-      <div class="feature-item">
-        <div class="feature-img">
-          <img src="images/figma-tsunagu-04.jpg" alt="">
-        </div>
-        <div class="feature-content">
-          <div class="feature-title">島の水で、島の自然を守る</div>
-          <div class="feature-body">世界自然遺産・屋久島の1,000年の水の循環思想を体現し、環境保全と日常業務を無理なく両立できる、島の自然と共存する洗浄水です。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-img">
-          <img src="images/figma-tsunagu-03.jpg" alt="">
-        </div>
-        <div class="feature-content">
-          <div class="feature-title">屋久島の水は電気分解効率が高い</div>
-          <div class="feature-body">屋久島の水は電気分解効率が高く、イオンが安定することで洗浄力が均一に発揮され、白い汚れ（スケール）も出にくい高品質な洗浄水が生まれます。</div>
-        </div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-img">
-          <img src="images/figma-business-02.jpg" alt="">
-        </div>
-        <div class="feature-content">
-          <div class="feature-title">洗剤に頼らない「水の力」</div>
-          <div class="feature-body">界面活性剤を一切使わず、水の力だけで油汚れ・皮脂・タンパク質を分解するため、洗剤残留や臭い戻りがない安心・安全な洗浄水です。</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   </div><!-- /hero-sticky-zone -->
 
   <!-- PRODUCTS SECTION -->
   <section id="products" class="products-section">
     <div class="products-section-header">
-      <div class="section-label">Products</div>
-      <div class="section-title-jp">屋久島で生まれた製品</div>
+      <h5 class="section-label">Products</h5>
+      <h3 class="section-title-jp">屋久島で生まれた製品</h3>
     </div>
     <div class="products-list">
       <div class="product-band product-band--dark">
         <div class="product-band-text">
-          <div class="product-band-title">屋久島洗浄水つなぐ</div>
-          <div class="product-band-body">屋久島の軟水を特徴な電解技術により洗浄力のある アルカリ側の水を、洗浄水を生み出しました。</div>
+          <h4 class="product-band-title">屋久島洗浄水つなぐ</h4>
+          <p class="product-band-body">屋久島の軟水を特徴な電解技術により洗浄力のある アルカリ側の水を、洗浄水を生み出しました。</p>
           <a href="tsunagu.html" class="btn-more">詳しく見る</a>
         </div>
       </div>
       <div class="product-band product-band--light">
         <div class="product-band-text product-band-text--right">
-          <div class="product-band-title">ACTGUARD 屋久島つなぐ</div>
-          <div class="product-band-body">世界自然遺産の島が生んだ、地球にやさしいカビ対策。 屋久島の課題「カビ」を解決し、洗うだけでなくその後も守り続けます。</div>
+          <h4 class="product-band-title">ACTGUARD 屋久島つなぐ</h4>
+          <p class="product-band-body">世界自然遺産の島が生んだ、地球にやさしいカビ対策。 屋久島の課題「カビ」を解決し、洗うだけでなくその後も守り続けます。</p>
           <a href="actguard.html" class="btn-more">詳しく見る</a>
         </div>
       </div>
       <div class="product-band product-band--dark">
         <div class="product-band-text">
-          <div class="product-band-title">屋久島ペーパー</div>
-          <div class="product-band-body">役目を終えた屋久杉を、人と人をつなぐ名刺へ。千年の時を生きた木の記憶を紙に宿し、初めての出会いの瞬間にあなたの価値観を伝える、森が生んだ一枚です。</div>
+          <h4 class="product-band-title">屋久島ペーパー</h4>
+          <p class="product-band-body">役目を終えた屋久杉を、人と人をつなぐ名刺へ。千年の時を生きた木の記憶を紙に宿し、初めての出会いの瞬間にあなたの価値観を伝える、森が生んだ一枚です。</p>
           <a href="#" class="btn-more">詳しく見る</a>
         </div>
       </div>
@@ -240,7 +205,7 @@
       <div class="kankyo-hero-photo"></div>
       <div class="kankyo-hero-content">
         <div class="kankyo-hero-text">
-          <h2 class="kankyo-hero-title">環境事業</h2>
+          <h3 class="kankyo-hero-title">環境事業</h3>
           <p class="kankyo-hero-body">屋久島の豊かな自然環境をフィールドに、独自の洗浄技術やカビ防止機能水、環境素材、アップサイクル技術の開発・応用を展開しています。
                                       自然が持つ循環の力を活かしながら、持続可能な未来の実現を目指し、島の価値を世界へと発信していきます。</p>
           <div class="kankyo-hero-link">
@@ -253,7 +218,7 @@
       <div class="kankyo-card kankyo-card--left">
         <div class="kankyo-card-content">
           <div class="kankyo-card-text">
-            <p class="kankyo-card-title">アップサイクル事業</p>
+            <h4 class="kankyo-card-title">アップサイクル事業</h4>
             <p class="kankyo-card-body">YAKUSHIMA HARMONIA LABでは、屋久島の豊かな自然資源を活かし、シャンプーや石鹸、精油などのプロダクト開発を進めています。</p>
           </div>
           <a href="#environment" class="kankyo-card-btn">→</a>
@@ -262,7 +227,7 @@
       <div class="kankyo-card kankyo-card--right">
         <div class="kankyo-card-content">
           <div class="kankyo-card-text">
-            <p class="kankyo-card-title">YAKUSHIMA HARMONIA MOBILITY</p>
+            <h4 class="kankyo-card-title">YAKUSHIMA HARMONIA MOBILITY</h4>
             <p class="kankyo-card-body">本事業は、低速・低環境負荷・開放的なトゥクトゥクを活用し、屋久島の自然と「共鳴」する新しい移動体験を提供することを目的とします。</p>
           </div>
           <a href="mobility.html" class="kankyo-card-btn">→</a>
@@ -280,20 +245,20 @@
             <div class="news-dot"></div>
             <span class="news-release-text">News Release</span>
           </div>
-          <div class="news-title">お知らせ</div>
+          <h2 class="news-title">お知らせ</h2>
         </div>
         <div class="news-list">
           <a href="#news" class="news-item">
-            <div class="news-date">2026.03.08</div>
-            <div class="news-body">屋久島の自然環境に内在する「水・波動・循環・調和」に着目し、つなぐ洗浄技術、カビ防止機能水、環境素材、アップサイクル技術へ応用する</div>
+            <p class="news-date">2026.03.08</p>
+            <p class="news-body">屋久島の自然環境に内在する「水・波動・循環・調和」に着目し、つなぐ洗浄技術、カビ防止機能水、環境素材、アップサイクル技術へ応用する</p>
           </a>
           <a href="#news" class="news-item">
-            <div class="news-date">2026.03.04</div>
-            <div class="news-body">環境と洗浄力を両立する、世界に通用する洗浄水プロジェクト</div>
+            <p class="news-date">2026.03.04</p>
+            <p class="news-body">環境と洗浄力を両立する、世界に通用する洗浄水プロジェクト</p>
           </a>
           <a href="#news" class="news-item">
-            <div class="news-date">2026.02.23</div>
-            <div class="news-body">メディア掲載：日本経済新聞に掲載されました</div>
+            <p class="news-date">2026.02.23</p>
+            <p class="news-body">メディア掲載：日本経済新聞に掲載されました</p>
           </a>
         </div>
       </div>
@@ -322,7 +287,7 @@
           <div class="contact-label-line"></div>
         </div>
         <div class="contact-card-body contact-card-body--call">
-          <p class="contact-card-title">電話でお問い合わせ</p>
+          <h3 class="contact-card-title">電話でお問い合わせ</h3>
           <p class="contact-card-tel">000-1234-5678</p>
           <p class="contact-card-note">営業時間 09:00〜18:00</p>
         </div>
@@ -334,7 +299,7 @@
           <div class="contact-label-line"></div>
         </div>
         <div class="contact-card-body">
-          <p class="contact-card-title">メールでお問い合わせ</p>
+          <h3 class="contact-card-title">メールでお問い合わせ</h3>
           <a href="contact.html" class="btn-contact-action">メールフォームへ →</a>
         </div>
       </div>
@@ -345,7 +310,7 @@
           <div class="contact-label-line"></div>
         </div>
         <div class="contact-card-body">
-          <p class="contact-card-title">お問い合わせはこちら</p>
+          <h3 class="contact-card-title">お問い合わせはこちら</h3>
           <a href="contact.html" class="btn-contact-action">お問い合わせフォームへ →</a>
         </div>
       </div>
@@ -360,7 +325,7 @@
       <!-- 左カラム: ロゴ・会社情報 -->
       <div class="footer-left">
         <div class="footer-brand">
-          <img src="images/logo-yakushima.svg" alt="YAKUSHIMA HARMONIA LAB" class="footer-brand-logo">
+          <img src="images/yakushima_logo_w.svg" alt="YAKUSHIMA HARMONIA LAB" class="footer-brand-logo">
         </div>
         <div class="footer-info">
           <div class="footer-info-row">

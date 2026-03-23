@@ -2,13 +2,13 @@
   var header = document.querySelector('header');
   if (!header) return;
 
-  var heroEl =
-    document.querySelector('.hero') ||
+  var triggerEl =
+    document.querySelector('.about-text-area') ||
     document.querySelector('.about-pg-hero') ||
     document.querySelector('.page-top');
 
   function update() {
-    var threshold = heroEl ? heroEl.offsetTop + heroEl.offsetHeight : 80;
+    var threshold = triggerEl ? triggerEl.offsetTop : 80;
     header.classList.toggle('header--scrolled', window.scrollY > threshold);
   }
 
