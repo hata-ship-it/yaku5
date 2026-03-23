@@ -37,6 +37,7 @@ header {
   height: 86px;
   background: transparent;
   gap: 40px;
+  transition: background 0.35s ease;
 }
 
 .header-logo {
@@ -71,6 +72,60 @@ nav.main-nav a {
 
 nav.main-nav a:hover { opacity: 0.65; }
 
+/* ===== DROPDOWN NAV ===== */
+.nav-dropdown-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 86px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  transform: translateY(-6px);
+  background: #1a1a1a;
+  /* min-width: 200px; */
+  padding: 8px 0 0 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+
+.nav-dropdown-wrap:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0 20px 12px 0;
+  color: #fff;
+  font-family: var(--font-jp);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 1;
+  transition: background 0.15s;
+}
+
+.nav-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+.nav-dropdown-a--sm {
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -94,6 +149,17 @@ nav.main-nav a:hover { opacity: 0.65; }
   color: var(--color-text-dark);
   opacity: 1;
 }
+
+/* scrolled state */
+header.header--scrolled {
+  background: #1a1a1a;
+}
+
+.header--light-page.header--scrolled nav.main-nav a { color: #fff; }
+.header--light-page.header--scrolled .lang-switch a { color: #fff; }
+.header--light-page.header--scrolled .lang-switch span { color: rgba(255,255,255,0.6); }
+.header--light-page.header--scrolled .header-logo img { filter: brightness(0) invert(1); }
+.header--light-page.header--scrolled .header-cart { color: #fff; opacity: 0.85; }
 
 .lang-switch {
   display: flex;
@@ -132,8 +198,14 @@ nav.main-nav a:hover { opacity: 0.65; }
 .btn-contact:hover { background: rgba(255,255,255,0.15); }
 
 /* ===== HERO ===== */
-.hero {
+.hero-sticky-zone {
   position: relative;
+}
+
+.hero {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   width: 100%;
   height: 900px;
   overflow: hidden;
@@ -141,9 +213,42 @@ nav.main-nav a:hover { opacity: 0.65; }
   margin-top: 0;
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--hero-overlay, 0));
+  pointer-events: none;
+  z-index: 5;
+}
+
+.vision-section {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.vision-section .vision-section-title,
+.vision-section .vision-text,
+.vision-section .btn-inquiry {
+  color: #fff;
+}
+
+.vision-section .btn-inquiry::after {
+  border-color: #fff;
+}
+
+.about-section,
+.what-section,
+.features-section {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+}
+
 .hero-inner {
   position: absolute;
-  left: 60px;
+  left: 0;
   right: 0;
   top: 0;
   bottom: 0;
@@ -155,22 +260,23 @@ nav.main-nav a:hover { opacity: 0.65; }
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 1;
 }
 
 .hero-catch {
   position: absolute;
-  left: 93px;
+  left: 60px;
   top: 470px;
   z-index: 10;
 }
 
 .hero-catch p {
   font-family: var(--font-jp);
-  font-size: 68px;
+  font-size: 48px;
   font-weight: 700;
   color: #fff;
-  letter-spacing: -2px;
-  line-height: 95.2px;
+  letter-spacing: -1.5px;
+  line-height: 72px;
   white-space: nowrap;
 }
 
@@ -178,7 +284,7 @@ nav.main-nav a:hover { opacity: 0.65; }
 /* ===== VISION / ABOUT SECTION ===== */
 .vision-section {
   position: relative;
-  background-color: var(--color-bg-section);
+  /* background-color: var(--color-bg-section); */
   padding: 178px 60px 178px;
 }
 
@@ -209,6 +315,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   gap: 54px;
   font-family: var(--font-jp);
   font-size: 16px;
+  font-weight: 700;
   line-height: 38.4px;
   letter-spacing: -0.48px;
   color: #1a1a1a;
@@ -282,7 +389,7 @@ nav.main-nav a:hover { opacity: 0.65; }
 .about-top-img-left-inner {
   width: 566px;
   height: 354px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-about-top-left.jpg') center/cover no-repeat;
 }
 
 .about-top-img-right {
@@ -296,17 +403,18 @@ nav.main-nav a:hover { opacity: 0.65; }
 .about-top-img-right-inner {
   width: 449px;
   height: 466px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-about-top-right.jpg') center/cover no-repeat;
 }
 
 /* Staggered text area */
 .about-text-area {
   display: flex;
   align-items: flex-start;
+  gap: 100px;
 }
 
 .about-heading-block {
-  flex: 0 0 424px;
+  flex: 0 0 auto;
   padding-left: 59px;
   display: flex;
   flex-direction: column;
@@ -328,6 +436,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   line-height: 62.4px;
   letter-spacing: -0.78px;
   color: var(--color-text-dark);
+  white-space: nowrap;
 }
 
 .about-body-block {
@@ -369,7 +478,7 @@ nav.main-nav a:hover { opacity: 0.65; }
 .about-bottom-img-left {
   flex: 0 0 683px;
   height: 330px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-about-bottom-left.jpg') center/cover no-repeat;
 }
 
 .about-bottom-img-right-col {
@@ -380,7 +489,7 @@ nav.main-nav a:hover { opacity: 0.65; }
 .about-bottom-img-right {
   width: 332px;
   height: 520px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-about-bottom-right.jpg') center/cover no-repeat;
 }
 
 /* ===== YAKUSHIMA HARMONIA LAB WHAT IS SECTION ===== */
@@ -409,7 +518,7 @@ nav.main-nav a:hover { opacity: 0.65; }
 .what-img-placeholder {
   width: 739px;
   height: 475px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-tsunagu-03.jpg') center/cover no-repeat;
   position: relative;
 }
 
@@ -419,7 +528,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   top: 373px;
   width: 411px;
   height: 391px;
-  background: #c7c7c7;
+  background: #c7c7c7 url('images/figma-business-03.jpg') center/cover no-repeat;
 }
 
 .what-accordion {
@@ -568,6 +677,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 1;
   transition: transform 0.4s;
 }
 
@@ -621,13 +731,16 @@ nav.main-nav a:hover { opacity: 0.65; }
 
 .product-band--dark { background: #bfbfbf; }
 .product-band--light { background: #e6e6e6; }
+.products-list .product-band:nth-child(1) { background: #ffffff url('images/figma-product-tsunagu.png') center/cover no-repeat; }
+.products-list .product-band:nth-child(3) { background: #ffffff url('images/figma-product-paper.png') center/cover no-repeat; }
 
 .product-band-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
   max-width: 500px;
-  margin-left: 156px;
+  margin-left: 80px;
+  margin-top: 80px;
 }
 
 .product-band-text--right {
@@ -827,28 +940,27 @@ nav.main-nav a:hover { opacity: 0.65; }
 .kankyo-hero {
   display: flex;
   align-items: flex-start;
-  height: 465px;
+  height: 480px;
 }
 
 .kankyo-hero-photo {
   flex: 0 0 633px;
   height: 380px;
-  background: #D9D9D9;
+  background: #D9D9D9 url('images/figma-environment-01.jpg') center/cover no-repeat;
 }
 
 .kankyo-hero-content {
   flex: 1;
   height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 80px;
+  position: relative;
 }
 
 .kankyo-hero-text {
+  position: absolute;
+  left: 220px;
+  top: 140px;
   width: 220px;
   height: 280px;
-  position: relative;
 }
 
 .kankyo-hero-title {
@@ -870,7 +982,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   line-height: 26px;
   letter-spacing: 0.3px;
   color: #555;
-  width: 213px;
+  width: 350px;
   position: absolute;
   top: 80px;
   left: 0;
@@ -926,21 +1038,30 @@ nav.main-nav a:hover { opacity: 0.65; }
   height: 502px;
   background: #D9D9D9;
   overflow: hidden;
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  padding: 0 22px 22px;
+  align-items: stretch;
+  padding: 0;
 }
 
 .kankyo-card--left {
   border-right: 3px solid #fff;
   padding-right: 25px;
+  background: #D9D9D9 url('images/figma-environment-02.jpg') center/cover no-repeat;
+}
+
+.kankyo-card--right {
+  background: #D9D9D9 url('images/figma-environment-03.jpg') center/cover no-repeat;
 }
 
 .kankyo-card-content {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  align-self: flex-end;
   width: 100%;
+  padding: 40px 22px 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
 }
 
 .kankyo-card-text {
@@ -954,7 +1075,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   font-weight: 700;
   line-height: 36.4px;
   letter-spacing: -0.78px;
-  color: #1a1a1a;
+  color: #fff;
   white-space: nowrap;
 }
 
@@ -964,7 +1085,7 @@ nav.main-nav a:hover { opacity: 0.65; }
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.3px;
-  color: #1a1a1a;
+  color: rgba(255,255,255,0.85);
   max-width: 489px;
 }
 
