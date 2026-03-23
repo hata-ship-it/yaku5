@@ -2358,7 +2358,7 @@ header.header--scrolled {
 .about-pg-hero-img {
   width: 100%;
   height: 100%;
-  background: #c0c0b8;
+  background: #c0c0b8 url('images/figma-about-hero.jpg') center/cover no-repeat;
   min-height: 760px;
 }
 
@@ -2387,7 +2387,7 @@ header.header--scrolled {
   left: 144px;
   width: 561px;
   height: 321px;
-  background: #c8c8c0;
+  background: #c8c8c0 url('images/figma-about-split-top.jpg') center/cover no-repeat;
 }
 
 .about-pg-split-img-bottom {
@@ -2396,7 +2396,7 @@ header.header--scrolled {
   left: 144px;
   width: 557px;
   height: 344px;
-  background: #b8b8b0;
+  background: #b8b8b0 url('images/figma-about-split-bottom.jpg') center/cover no-repeat;
 }
 
 .about-pg-split-text {
@@ -2480,7 +2480,7 @@ header.header--scrolled {
   top: 118px;
   width: 459px;
   height: 560px;
-  background: #c0c0b8;
+  background: #c0c0b8 url('images/figma-about-research.jpg') center/cover no-repeat;
 }
 
 /* --- Section 4: centered + 5-photo grid --- */
@@ -2542,6 +2542,11 @@ header.header--scrolled {
   height: 240px;
   background: #c8c8c0;
 }
+.about-pg-field-photo:nth-child(1) { background-image: url('images/figma-about-field-01.jpg'); background-size: cover; background-position: center; }
+.about-pg-field-photo:nth-child(2) { background-image: url('images/figma-about-field-02.jpg'); background-size: cover; background-position: center; }
+.about-pg-field-photo:nth-child(3) { background-image: url('images/figma-about-field-03.jpg'); background-size: cover; background-position: center; }
+.about-pg-field-photo:nth-child(4) { background-image: url('images/figma-about-field-04.jpg'); background-size: cover; background-position: center; }
+.about-pg-field-photo:nth-child(5) { background-image: url('images/figma-about-field-05.jpg'); background-size: cover; background-position: center; }
 
 /* --- Section 5: Vision display heading + body text --- */
 .about-pg-vision {
