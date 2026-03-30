@@ -91,36 +91,32 @@ header {
   margin-top: 0;
 }
 
-.hero-slides {
+.hero-video {
   position: absolute;
   inset: 0;
-}
-
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1);
-  animation: heroFade 20s linear infinite;
-  will-change: transform, opacity;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: brightness(0.9);
 }
 
-.hero-slide:nth-child(1) { animation-delay: 0s; }
-.hero-slide:nth-child(2) { animation-delay: 4s; }
-.hero-slide:nth-child(3) { animation-delay: 8s; }
-.hero-slide:nth-child(4) { animation-delay: 12s; }
-.hero-slide:nth-child(5) { animation-delay: 16s; }
+.hero-yakutop {
+  position: absolute;
+  inset: 0;
+  background: url('images/yakutop.jpg') center/cover no-repeat;
+  filter: brightness(0.9);
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+}
 
-/* ズームの途中でクロスフェード */
-@keyframes heroFade {
-  0%    { opacity: 0; transform: scale(1);    animation-timing-function: linear; }
-  2.5%  { opacity: 1; transform: scale(1.02); animation-timing-function: linear; }
-  15%   { opacity: 1; transform: scale(1.07); animation-timing-function: linear; }
-  22.5% { opacity: 0; transform: scale(1.12); animation-timing-function: linear; }
-  100%  { opacity: 0; transform: scale(1); }
+.hero-yakutop.zoom-active {
+  animation: yakutopZoom 4s ease-out forwards;
+}
+
+@keyframes yakutopZoom {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.04); }
 }
 
 .hero-text {

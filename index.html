@@ -28,13 +28,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-slides">
-      <div class="hero-slide" style="background-image:url('images/yaku1.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/yaku2.png')"></div>
-      <div class="hero-slide" style="background-image:url('images/yaku3.png')"></div>
-      <div class="hero-slide" style="background-image:url('images/yaku4.png')"></div>
-      <div class="hero-slide" style="background-image:url('images/yaku5.png')"></div>
-    </div>
+    <video class="hero-video" id="heroVideo" src="images/movie.mp4" autoplay muted playsinline></video>
+    <div class="hero-yakutop" id="heroYakutop"></div>
     <div class="hero-text">
       <p class="hero-title">共鳴</p>
       <p class="hero-sub">harmony with YAKUSHIMA</p>
@@ -361,5 +356,14 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    (function () {
+      var video = document.getElementById('heroVideo');
+      var yakutop = document.getElementById('heroYakutop');
+      video.addEventListener('ended', function () {
+        yakutop.classList.add('zoom-active');
+      });
+    })();
+  </script>
 </body>
 </html>
