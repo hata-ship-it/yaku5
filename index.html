@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YAKUSHIMA HARMONIA LAB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@300;400;700&family=Inter:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Zen+Old+Mincho:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://mcp.figma.com/mcp/html-to-design/capture.js"></script>
 </head>
@@ -16,49 +16,11 @@
     <div class="header-logo">
       <img src="images/yakushima_logo_w.svg" alt="YAKUSHIMA HARMONIA LAB">
     </div>
-    <nav class="main-nav">
-      <a href="about.html">屋久島研究所について</a>
-      <div class="nav-dropdown-wrap">
-        <a href="#business">事業内容</a>
-        <div class="nav-dropdown">
-          <a href="tsunagu.html">屋久島洗浄水つなぐ</a>
-          <a href="tsunagu.html#about">屋久島洗浄水とは</a>
-          <a href="tsunagu.html#features">屋久島洗浄水の特徴</a>
-        </div>
-      </div>
-      <div class="nav-dropdown-wrap">
-        <a href="#products">商品</a>
-        <div class="nav-dropdown">
-          <a href="tsunagu.html">屋久島洗浄水つなぐ</a>
-          <a href="actguard.html">ACTGUARD屋久島つなぐ</a>
-          <a href="shop.html">屋久杉ペーパー</a>
-        </div>
-      </div>
-      <div class="nav-dropdown-wrap">
-        <a href="#environment">環境事業</a>
-        <div class="nav-dropdown">
-          <a href="#environment">アップサイクル事業</a>
-          <a href="mobility.html" class="nav-dropdown-a--sm">YAKUSHIMA HARMONIA MOBILITY</a>
-        </div>
-      </div>
-      <a href="company.html">会社情報</a>
-      <a href="#news">お知らせ</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-    <div class="header-right">
-      <div class="lang-switch">
-        <a href="#">JP</a>
-        <span>/</span>
-        <a href="#">EN</a>
-      </div>
-      <a href="cart.html" class="header-cart" aria-label="カート">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="9" cy="21" r="1"/>
-          <circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6"/>
-        </svg>
-      </a>
-    </div>
+    <button class="header-hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <!-- STICKY HERO ZONE -->
@@ -66,12 +28,16 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <video src="images/u2837383316_______________--ar_4336_--motion_low_--video_1_bd1ca54e-67f8-400e-8b94-d11e8703c064_0.mp4" autoplay loop muted playsinline></video>
-      <div class="hero-catch">
-        <p>屋久島からしか</p>
-        <p>できない物語を。</p>
-      </div>
+    <div class="hero-slides">
+      <div class="hero-slide" style="background-image:url('images/yaku1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/yaku2.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/yaku3.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/yaku4.png')"></div>
+      <div class="hero-slide" style="background-image:url('images/yaku5.png')"></div>
+    </div>
+    <div class="hero-text">
+      <p class="hero-title">共鳴</p>
+      <p class="hero-sub">harmony with YAKUSHIMA</p>
     </div>
   </section>
 
