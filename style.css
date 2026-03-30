@@ -105,6 +105,7 @@ header {
   transform: scale(1);
   animation: heroFade 20s linear infinite;
   will-change: transform, opacity;
+  filter: brightness(0.9);
 }
 
 .hero-slide:nth-child(1) { animation-delay: 0s; }
@@ -135,7 +136,7 @@ header {
 }
 
 .hero-text {
-  gap: 10px;
+  gap: 20px;
 }
 
 .hero-title {
